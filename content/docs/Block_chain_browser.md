@@ -1,5 +1,5 @@
 ---
-title: "Block_chain_browser"
+title: "ブロックチェーン ブラウザ"
 date: 2020-10-07T00:39:07+09:00
 draft: true
 ---
