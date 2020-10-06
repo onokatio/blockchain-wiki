@@ -4,8 +4,7 @@ date: 2020-10-06T19:41:24+09:00
 draft: true
 ---
 
-
-Transaction data is permanently recorded in files called '''blocks'''. They can be thought of as the individual pages of a city recorder's recordbook (where changes to title to real estate are recorded) or a stock transaction ledger. Blocks are organized into a linear sequence over time (also known as the [[block chain]]). New transactions are constantly being processed by [[Mining|miners]] into new blocks which are added to the end of the chain. As blocks are [[Confirmation|buried deeper and deeper]] into the blockchain they become [[Proof of work|harder and harder]] to change or remove, this gives rise of bitcoin's [[Irreversible Transactions]].
+取引データはブロックと呼ばれるファイルに永久に記録されます。ブロックは、土地の登記簿や株式取引台帳の個々のページのように考えることができます。ブロックは、時間の経過とともに直線的な順序に編成されています（[[ブロックチェーン]]としても知られています）。新しい取引は常に[[マイニング]]によって新しいブロックに処理され、チェーンの末端に追加されます。ブロックがブロックチェーンの中に[[確認|埋まっていく]]ことで、変更や削除が難しくなるため、ビットコインの[[不可逆取引]]が発生します。
 
 ## Description
 
