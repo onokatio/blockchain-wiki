@@ -1,5 +1,5 @@
 ---
-title: "Raw_Transactions"
+title: "Raw Transactions API"
 date: 2020-10-07T00:39:50+09:00
 draft: true
 ---
