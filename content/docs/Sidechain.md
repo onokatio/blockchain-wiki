@@ -1,5 +1,5 @@
 ---
-title: "Sidechain"
+title: "サイドチェーン"
 date: 2020-10-06T20:09:48+09:00
 draft: true
 ---
