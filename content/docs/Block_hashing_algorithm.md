@@ -1,5 +1,5 @@
 ---
-title: "Block_hashing_algorithm"
+title: "ハッシュアルゴリズム"
 date: 2020-10-06T20:04:25+09:00
 draft: true
 ---
