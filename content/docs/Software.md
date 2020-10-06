@@ -1,5 +1,5 @@
 ---
-title: "Software"
+title: "ソフトウェア"
 date: 2020-10-07T00:37:38+09:00
 draft: true
 ---
