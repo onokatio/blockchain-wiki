@@ -1,5 +1,5 @@
 ---
-title: "Blockchain"
+title: "ブロックチェーン"
 date: 2020-10-06T20:00:08+09:00
 draft: true
 ---
