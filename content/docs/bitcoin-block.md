@@ -1,14 +1,16 @@
 ---
-title: "Block"
+title: "ブロック"
 date: 2020-10-06T19:41:24+09:00
 draft: true
 ---
 
-取引データはブロックと呼ばれるファイルに永久に記録されます。ブロックは、土地の登記簿や株式取引台帳の個々のページのように考えることができます。ブロックは、時間の経過とともに直線的な順序に編成されています（[[ブロックチェーン]]としても知られています）。新しい取引は常に[[マイニング]]によって新しいブロックに処理され、チェーンの末端に追加されます。ブロックがブロックチェーンの中に[[確認|埋まっていく]]ことで、変更や削除が難しくなるため、ビットコインの[[不可逆取引]]が発生します。
+ここでは、ビットコインのブロックについて書いてあります。ビットコイン以外のブロックチェーンでは別の構造の場合があります。
+
+ビットコイン取引データはブロックと呼ばれるファイルに永久に記録されます。ブロックは、土地の登記簿や株式取引台帳の個々のページのように考えることができます。ブロックは、時間の経過とともに直線的な順序に編成されています（[[ブロックチェーン]]としても知られています）。新しい取引は常に[[マイニング]]によって新しいブロックに処理され、チェーンの末端に追加されます。ブロックがブロックチェーンの中に[[確認|埋まっていく]]ことで、変更や削除が難しくなるため、ビットコインの[[不可逆取引]]が発生します。
 
 ## Description
 
-Each block contains, among other things, the [[Block timestamp|current time]], a record of some or all recent [[transactions]], and a reference to the block that came immediately before it. It also contains an answer to a difficult-to-solve mathematical puzzle - the answer to which is unique to each block.  New blocks cannot be submitted to the network without the correct answer - the process of "[[mining]]" is essentially the process of competing to be the next to find the answer that "solves" the current block.  The mathematical problem in each block is extremely [[difficulty|difficult]] to solve, but once a valid solution is found, it is very easy for the rest of the network to confirm that the solution is correct.  There are multiple valid solutions for any given block - only one of the solutions needs to be found for the block to be solved.
+各ブロックには、[[Block timestamp|current time]]、いくつかまたはすべての最近の[[transaction]]の記録、そして直前のブロックへの参照が含まれています。また、難解な数学パズルの答えも含まれています。その答えは各ブロックに固有です。正しい答えがなければ、新しいブロックをネットワークに提出することはできません。[[マイニング]]のプロセスは、本質的には、現在のブロックを「解く」答えを見つけるために、次に来るものを競うプロセスです。各ブロックの数学的な問題は、解くのが非常に難しい[[難易度|difficult]]のですが、一度有効な解が見つかると、その解が正しいことをネットワークの残りの部分が確認するのは非常に簡単です。どのブロックにも複数の有効な解が存在します。ブロックを解くためには1つの解だけを見つける必要があります．
 
 Because there is a reward of brand new bitcoins for solving each block, every block also contains a record of which [[Bitcoin address]]es or [[script]]s are entitled to receive the reward. This record is known as a generation transaction, or a [[coinbase]] transaction, and is always the first transaction appearing in every block. The number of [[Bitcoins]] generated per block starts at 50 and is [[controlled supply|halved]] every 210,000 blocks (about four years).
 
