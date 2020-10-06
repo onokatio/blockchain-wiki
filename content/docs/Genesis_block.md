@@ -1,5 +1,5 @@
 ---
-title: "Genesis_block"
+title: "ジェネシスブロック"
 date: 2020-10-06T20:03:53+09:00
 draft: true
 ---
