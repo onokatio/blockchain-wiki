@@ -1,5 +1,3 @@
-# hugo server --minify --themesDir ... --baseURL=http://0.0.0.0:1313/theme/hugo-book/
-
 baseURL = 'https://blockchain-wiki.katio.net/'
 title = 'Hugo Book'
 theme = 'book'
@@ -15,16 +13,6 @@ enableGitInfo = true
 
 [markup.tableOfContents]
   startLevel = 1
-
-# Multi-lingual mode config
-# There are different options to translate files
-# See https://gohugo.io/content-management/multilingual/#translation-by-filename
-# And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
-[languages]
-[languages.en]
-  languageName = 'English'
-  contentDir = 'content'
-  weight = 1
 
 [menu]
 # [[menu.before]]
@@ -94,4 +82,4 @@ enableGitInfo = true
 
   # /!\ This is an experimental feature, might be removed or changed at any time
   # (Optional, experimental, default false) Enables service worker that caches visited pages and resources for offline use.
-  BookServiceWorker = true
+  BookServiceWorker = false
