@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin_Improvement_Proposals"
+title: "Bitcoin Improvement Proposals"
 date: 2020-10-07T00:36:16+09:00
 draft: true
 ---
