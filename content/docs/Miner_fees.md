@@ -1,5 +1,5 @@
 ---
-title: "Miner_fees"
+title: "マイニング手数料"
 date: 2020-10-07T00:29:44+09:00
 draft: true
 ---
