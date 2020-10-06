@@ -1,5 +1,5 @@
 ---
-title: "Alert_system"
+title: "アラートシステム"
 date: 2020-10-07T00:34:19+09:00
 draft: true
 ---
