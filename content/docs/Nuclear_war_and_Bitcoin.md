@@ -1,5 +1,5 @@
 ---
-title: "Nuclear_war_and_Bitcoin"
+title: "核戦争とビットコイン"
 date: 2020-10-07T00:30:05+09:00
 draft: true
 ---
