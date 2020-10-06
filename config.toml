@@ -8,4 +8,4 @@ enableGitInfo = true
   BookRepo = 'https://github.com/onokatio/blockchain-wiki'
   BookEditPath = 'edit/master/content'
   BookPortableLinks = true
-  BookServiceWorker = true
+  BookServiceWorker = false
