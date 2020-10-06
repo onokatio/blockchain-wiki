@@ -1,5 +1,5 @@
 ---
-title: "Network"
+title: "ネットワーク"
 date: 2020-10-06T20:07:35+09:00
 draft: true
 ---
