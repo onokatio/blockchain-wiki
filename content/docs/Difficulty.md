@@ -1,5 +1,5 @@
 ---
-title: "Difficulty"
+title: "難易度"
 date: 2020-10-06T20:08:33+09:00
 draft: true
 ---
