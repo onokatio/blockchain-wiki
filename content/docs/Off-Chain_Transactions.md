@@ -1,5 +1,5 @@
 ---
-title: "Off Chain_Transactions"
+title: "オフチェーントランザクション"
 date: 2020-10-07T00:31:00+09:00
 draft: true
 ---
