@@ -1,5 +1,5 @@
 ---
-title: "Block_timestamp"
+title: "ブロックタイムスタンプ"
 date: 2020-10-06T20:03:21+09:00
 draft: true
 ---
