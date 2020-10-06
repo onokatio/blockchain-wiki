@@ -1,5 +1,5 @@
 ---
-title: "Address"
+title: "アドレス"
 date: 2020-10-07T00:38:52+09:00
 draft: true
 ---
