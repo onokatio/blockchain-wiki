@@ -1,5 +1,5 @@
 ---
-title: "Proof_of_work"
+title: "Proof of work"
 date: 2020-10-07T00:31:39+09:00
 draft: true
 ---
