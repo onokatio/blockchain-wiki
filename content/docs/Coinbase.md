@@ -1,5 +1,5 @@
 ---
-title: "Coinbase"
+title: "コインベース"
 date: 2020-10-07T00:39:24+09:00
 draft: true
 ---
