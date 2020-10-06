@@ -1,5 +1,5 @@
 ---
-title: "Transaction"
+title: "トランザクション"
 date: 2020-10-06T20:06:43+09:00
 draft: true
 ---
