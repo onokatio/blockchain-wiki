@@ -1,5 +1,5 @@
 ---
-title: "Lightning_Network"
+title: "ライトニングネットワーク"
 date: 2020-10-06T20:11:31+09:00
 draft: true
 ---
