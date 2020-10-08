@@ -4,6 +4,9 @@ date: 2020-10-06T20:00:08+09:00
 draft: true
 ---
 
+# ブロックチェーン
+(未翻訳)
+
 [[File:blockchain.png|thumb|Blocks in the main chain (black) are the longest series of blocks that go from the genesis block (green) to the current block. Purple blocks are blocks that are not in the longest chain and therefore not used.]]
 
 A '''block chain''' is a transaction database shared by all [[Node|nodes]] participating in a system based on the Bitcoin protocol.  A full copy of a currency's block chain contains every [[transaction]] ever executed in the currency.  With this information, one can find out how much value belonged to each [[address]] at any point in history.
@@ -24,11 +27,11 @@ It's possible to use the block chain algorithm for non-financial purposes: see [
 
 The block chain is broadcast to all nodes on the networking using a flood protocol: see [[Block chain download]].
 
-== Time chain ==
+## Time chain
 
 [[Satoshi]] actually used the term time chain <ref>[https://cryptoinsider.media/timechain-satoshis-original-vision-blockchain-bitcoin/ Timechain is Satoshi's Original Vision for Blockchain and Bitcoin, Crypto Insider], by Vlad Costea</ref>.  Only at a later point the word ''blockchain'' became in widespread use, but mostly by promoters of [[altcoin]]s and consulting agencies marketing their services to big corporations and governments.
 
-== Blockchain nonsense ==
+## Blockchain nonsense
 
 Blockchain is touted as a magical fairy dust solution that you can sprinkle over a problem and end up with an amazing solution. ICOs have perfected this art (often combining it with other buzz words like IoT and AI) and raised billions of dollars to deliver virtually nothing.  If someone comes to you talking about a blockchain project: run if you don't know them. If they're a friend or family, explain to them that it's nonsense to use a blockchain without strong [[proof of work]] and an adequately decentralized network of nodes.  <!-- feel free to rewrite this, just wanted to put something here to work with -->
 
@@ -36,7 +39,7 @@ Blockchain is touted as a magical fairy dust solution that you can sprinkle over
 [[Category:Technical]]
 [[Category:Vocabulary]]
 
-==See Also==
+## See Also
 *[http://bitcoinproperly.org/ The real value of bitcoin and crypto currency technology - The Blockchain explained]
 
 * [https://bitupper.com/en/explorer/bitcoin Bitupper Explorer] - Clean and fast web-based Bitcoin blockchain explorer
