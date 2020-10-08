@@ -4,13 +4,15 @@ date: 2020-10-06T20:02:49+09:00
 draft: true
 ---
 
+# Base58Check
+
 (未翻訳)
 
 A modified Base 58 [http://en.wikipedia.org/wiki/Binary-to-text_encoding binary-to-text encoding] known as '''Base58Check''' is used for encoding [[Bitcoin address|Bitcoin addresses]].
 
 More generically, Base58Check encoding is used for encoding byte arrays in Bitcoin into human-typable strings.
 
-# Background
+## Background
 The original Bitcoin client source code explains the reasoning behind base58 encoding:
 
 base58.h:
@@ -21,7 +23,7 @@ base58.h:
  // - E-mail usually won't line-break if there's no punctuation to break at.
  // - Doubleclicking selects the whole number as one word if it's all alphanumeric.
 
-# Features of Base58Check
+## Features of Base58Check
 Base58Check has the following features:
 * An arbitrarily sized payload.
 * A set of 58 alphanumeric symbols consisting of easily distinguished uppercase and lowercase letters (0OIl are not used) 
@@ -29,7 +31,7 @@ Base58Check has the following features:
 * Four bytes (32 bits) of SHA256-based error checking code.  This code can be used to automatically detect and possibly correct typographical errors.
 * An extra step for preservation of leading zeroes in the data.
 
-# Creating a Base58Check string
+## Creating a Base58Check string
 A Base58Check string is created from a version/application byte and payload as follows.
 - Take the version byte and payload bytes, and concatenate them together (bytewise).
 - Take the first four bytes of SHA256(SHA256(results of step 1))
@@ -39,7 +41,7 @@ A Base58Check string is created from a version/application byte and payload as f
 - Concatenate the 1's from step 5 with the results of step 4.  '''This is the Base58Check result.'''
 A more detailed example is provided on the page describing the [[Technical_background_of_version_1_Bitcoin_addresses#How_to_create_Bitcoin_Address | technical background]] of the bitcoin address.
 
-# Encoding a Bitcoin address
+## Encoding a Bitcoin address
 Bitcoin addresses are implemented using the Base58Check encoding of the hash of either:
 * Pay-to-script-hash (p2sh): payload is: <code>[[RIPEMD160]]([[SHA256]]('''redeemScript'''))</code> where '''redeemScript''' is a script the wallet knows how to spend; version <code>0x05</code> (these addresses begin with the digit '3')
 * Pay-to-pubkey-hash (p2pkh): payload is <code>[[RIPEMD160]]([[SHA256]]('''ECDSA_publicKey'''))</code> where '''ECDSA_publicKey''' is a public key the wallet knows the private key for; version <code>0x00</code> (these addresses begin with the digit '1')
@@ -47,12 +49,12 @@ Bitcoin addresses are implemented using the Base58Check encoding of the hash of 
 The resulting hash in both of these cases is always exactly 20 bytes.
 These are big-endian (most significant byte first).  (Beware of [[bignumber]] implementations that clip leading 0x00 bytes, or prepend extra 0x00 bytes to indicate sign - your code must handle these cases properly or else you may generate valid-looking addresses which can be sent to, but cannot be spent from - which would lead to the permanent loss of coins.)
 
-# Encoding a private key
+## Encoding a private key
 Base58Check encoding is also used for encoding [[private key|ECDSA private keys]] in the [[wallet import format]].
 This is formed exactly the same as a Bitcoin address, except that 0x80 is used for the version/application byte, and the payload is 32 bytes instead of 20 (a private key in Bitcoin is a single 32-byte unsigned big-endian integer).
 For private keys associated with an uncompressed public key, such encodings will always yield a 51-character string that starts with '5', or more specifically, either '5H', '5J', or '5K'.
 
-# Base58 symbol chart
+## Base58 symbol chart
 The Base58 symbol chart used in Bitcoin is specific to the Bitcoin project and is not intended to be the same as any other Base58 implementation used outside the context of Bitcoin (the characters excluded are: 0, O, I, and l).
 {| class="wikitable" 
 |-
@@ -217,7 +219,7 @@ The algorithm for encoding address_byte_string (consisting of 1-byte_version + h
     
     output_string.reverse();
 
-==Version bytes==
+## Version bytes
 Here are some common version bytes:
 
 {| class="wikitable" 
@@ -256,10 +258,10 @@ Here are some common version bytes:
 |}
 [[List of address prefixes]] is a more complete list.
 
-# See Also 
+## See Also 
 * [http://lenschulwitz.com/base58 Online Base58 Decoder, Encoder, and Validator]
 
-# Source code 
+## Source code 
 * [https://github.com/bitcoin/bitcoin/blob/master/src/base58.cpp "Satoshi" C++ codebase (decode and encode, no external libraries needed)]
 * [https://github.com/luke-jr/libbase58 libbase58 C code (decode and encode, no external libraries needed)]
 * [http://lenschulwitz.com/b58/base58perl.txt Base58 Decode, Encode, and Validate in Perl]
