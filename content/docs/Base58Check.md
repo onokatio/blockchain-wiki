@@ -256,10 +256,10 @@ Here are some common version bytes:
 |}
 [[List of address prefixes]] is a more complete list.
 
-== See Also ==
+# See Also 
 * [http://lenschulwitz.com/base58 Online Base58 Decoder, Encoder, and Validator]
 
-== Source code ==
+# Source code 
 * [https://github.com/bitcoin/bitcoin/blob/master/src/base58.cpp "Satoshi" C++ codebase (decode and encode, no external libraries needed)]
 * [https://github.com/luke-jr/libbase58 libbase58 C code (decode and encode, no external libraries needed)]
 * [http://lenschulwitz.com/b58/base58perl.txt Base58 Decode, Encode, and Validate in Perl]
