@@ -1,6 +1,8 @@
 baseURL = 'https://blockchain-wiki.katio.net/'
 title = 'Blockchain Wiki'
 theme = 'book'
+languageCode = "ja"
+DefaultContentLanguage = "ja"
 
 # Book configuration
 disablePathToLower = true
@@ -61,7 +63,7 @@ enableGitInfo = true
   # Configure the date format used on the pages
   # - In git information
   # - In blog posts
-  BookDateFormat = 'January 2, 2006'
+  BookDateFormat = '最終更新日 2006/02/02'
 
   # (Optional, default true) Enables search function with flexsearch,
   # Index is built on fly, therefore it might slowdown your website.
