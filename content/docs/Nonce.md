@@ -21,7 +21,7 @@ presentation of the block with the correct nonce value constitutes [[proof of
 work]].
 
 == Golden Nonce == A ''golden nonce'' in Bitcoin [[mining]] is a nonce which
-results in a [[block hashing algorithm|hash]] value lower than the [[target]].  
+results in a [[block hashing algorithm|hash]] value lower than the [[target]].
 In many practical mining applications, this is simplified to any nonce which
 results in a block [[block hashing algorithm|hash]] which has 32 leading
 zeroes<ref>https://bitcointalk.org/index.php?topic=75609.msg837556#msg837556</ref>,

@@ -138,8 +138,8 @@ samples.
 
 input 0:
 c9 97 a5 e5 6e 10 41 02  input transaction hash (from block 9)
-fa 20 9c 6a 85 2d d9 06 
-60 a2 0b 2d 9c 35 24 23 
+fa 20 9c 6a 85 2d d9 06
+60 a2 0b 2d 9c 35 24 23
 ed ce 25 85 7f cd 37 04
 00 00 00 00              input index (index of txout in block 9 that's being spent)
 
@@ -163,15 +163,15 @@ output 0:
 43                       size of script (var_uint)
 script for output 0:
 41                       push 65 bytes to stack
-04 ae 1a 62 fe 09 c5 f5 
-1b 13 90 5f 07 f0 6b 99 
-a2 f7 15 9b 22 25 f3 74 
-cd 37 8d 71 30 2f a2 84 
-14 e7 aa b3 73 97 f5 54 
-a7 df 5f 14 2c 21 c1 b7 
-30 3b 8a 06 26 f1 ba de 
-d5 c7 2a 70 4f 7e 6c d8 
-4c 
+04 ae 1a 62 fe 09 c5 f5
+1b 13 90 5f 07 f0 6b 99
+a2 f7 15 9b 22 25 f3 74
+cd 37 8d 71 30 2f a2 84
+14 e7 aa b3 73 97 f5 54
+a7 df 5f 14 2c 21 c1 b7
+30 3b 8a 06 26 f1 ba de
+d5 c7 2a 70 4f 7e 6c d8
+4c
 ac                       OP_CHECKSIG
 
 output 1:
@@ -179,32 +179,32 @@ output 1:
 43                       size of script (var_uint)
 script for output 1:
 41                       push 65 bytes to stack
-04 11 db 93 e1 dc db 8a  
-01 6b 49 84 0f 8c 53 bc 
-1e b6 8a 38 2e 97 b1 48 
+04 11 db 93 e1 dc db 8a
+01 6b 49 84 0f 8c 53 bc
+1e b6 8a 38 2e 97 b1 48
 2e ca d7 b1 48 a6 90 9a
-5c b2 e0 ea dd fb 84 cc 
-f9 74 44 64 f8 2e 16 0b 
-fa 9b 8b 64 f9 d4 c0 3f 
-99 9b 86 43 f6 56 b4 12 
-a3                       
+5c b2 e0 ea dd fb 84 cc
+f9 74 44 64 f8 2e 16 0b
+fa 9b 8b 64 f9 d4 c0 3f
+99 9b 86 43 f6 56 b4 12
+a3
 ac                       OP_CHECKSIG
 
 00 00 00 00              locktime
 01 00 00 00              hash_code_type (added on)
 
 result =
-01 00 00 00 01 c9 97 a5 e5 6e 10 41 02 fa 20 9c 6a 85 2d d9 06 60 a2 0b 2d 9c 35 
-24 23 ed ce 25 85 7f cd 37 04 00 00 00 00 43 41 04 11 db 93 e1 dc db 8a 01 6b 49 
-84 0f 8c 53 bc 1e b6 8a 38 2e 97 b1 48 2e ca d7 b1 48 a6 90 9a 5c b2 e0 ea dd fb 
-84 cc f9 74 44 64 f8 2e 16 0b fa 9b 8b 64 f9 d4 c0 3f 99 9b 86 43 f6 56 b4 12 a3 
-ac ff ff ff ff 02 00 ca 9a 3b 00 00 00 00 43 41 04 ae 1a 62 fe 09 c5 f5 1b 13 90 
-5f 07 f0 6b 99 a2 f7 15 9b 22 25 f3 74 cd 37 8d 71 30 2f a2 84 14 e7 aa b3 73 97 
-f5 54 a7 df 5f 14 2c 21 c1 b7 30 3b 8a 06 26 f1 ba de d5 c7 2a 70 4f 7e 6c d8 4c 
-ac 00 28 6b ee 00 00 00 00 43 41 04 11 db 93 e1 dc db 8a 01 6b 49 84 0f 8c 53 bc 
-1e b6 8a 38 2e 97 b1 48 2e ca d7 b1 48 a6 90 9a 5c b2 e0 ea dd fb 84 cc f9 74 44 
-64 f8 2e 16 0b fa 9b 8b 64 f9 d4 c0 3f 99 9b 86 43 f6 56 b4 12 a3 ac 00 00 00 00 
-01 00 00 00 
+01 00 00 00 01 c9 97 a5 e5 6e 10 41 02 fa 20 9c 6a 85 2d d9 06 60 a2 0b 2d 9c 35
+24 23 ed ce 25 85 7f cd 37 04 00 00 00 00 43 41 04 11 db 93 e1 dc db 8a 01 6b 49
+84 0f 8c 53 bc 1e b6 8a 38 2e 97 b1 48 2e ca d7 b1 48 a6 90 9a 5c b2 e0 ea dd fb
+84 cc f9 74 44 64 f8 2e 16 0b fa 9b 8b 64 f9 d4 c0 3f 99 9b 86 43 f6 56 b4 12 a3
+ac ff ff ff ff 02 00 ca 9a 3b 00 00 00 00 43 41 04 ae 1a 62 fe 09 c5 f5 1b 13 90
+5f 07 f0 6b 99 a2 f7 15 9b 22 25 f3 74 cd 37 8d 71 30 2f a2 84 14 e7 aa b3 73 97
+f5 54 a7 df 5f 14 2c 21 c1 b7 30 3b 8a 06 26 f1 ba de d5 c7 2a 70 4f 7e 6c d8 4c
+ac 00 28 6b ee 00 00 00 00 43 41 04 11 db 93 e1 dc db 8a 01 6b 49 84 0f 8c 53 bc
+1e b6 8a 38 2e 97 b1 48 2e ca d7 b1 48 a6 90 9a 5c b2 e0 ea dd fb 84 cc f9 74 44
+64 f8 2e 16 0b fa 9b 8b 64 f9 d4 c0 3f 99 9b 86 43 f6 56 b4 12 a3 ac 00 00 00 00
+01 00 00 00
 </pre>
 
 To understand where that raw dump has come from, it may be useful to examine
