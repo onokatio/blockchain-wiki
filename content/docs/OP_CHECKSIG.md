@@ -4,44 +4,60 @@ date: 2020-10-07T00:30:42+09:00
 draft: true
 ---
 
-''This article describes the operation of OP_CHECKSIG in non-segwit scripts. The hash digest for OP_CHECKSIG, OP_CHECKSIGVERIFY, OP_CHECKMULTISIG, OP_CHECKMULTISIGVERIFY in segwit scripts is calculated differently, as described in [https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki BIP 143].''
+''This article describes the operation of OP_CHECKSIG in non-segwit scripts. The
+hash digest for OP_CHECKSIG, OP_CHECKSIGVERIFY, OP_CHECKMULTISIG,
+OP_CHECKMULTISIGVERIFY in segwit scripts is calculated differently, as described
+in [https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki BIP 143].''
 
-'''OP_CHECKSIG''' is [[Script|script]] opcode used to verify that the signature for a tx input is valid. OP_CHECKSIG expects two values to be on the stack.  These are, in order of stack depth, the public key and the signature of the script. These two values are normally obtained by running the scriptSig script of the transaction input we are attempting to validate. The scriptSig script is deleted after it is run, but the stack is left as is.  Then, the scriptPubKey script from the previous transaction output that is now being spent is run, generally concluding in an OP_CHECKSIG. 
+'''OP_CHECKSIG''' is [[Script|script]] opcode used to verify that the signature
+for a tx input is valid. OP_CHECKSIG expects two values to be on the stack.
+These are, in order of stack depth, the public key and the signature of the
+script. These two values are normally obtained by running the scriptSig script
+of the transaction input we are attempting to validate. The scriptSig script is
+deleted after it is run, but the stack is left as is. Then, the scriptPubKey
+script from the previous transaction output that is now being spent is run,
+generally concluding in an OP_CHECKSIG.
 
-The standard scriptPubKey checks that the public key (actually a hash of) is a particular value, and that OP_CHECKSIG passes.
+The standard scriptPubKey checks that the public key (actually a hash of) is a
+particular value, and that OP_CHECKSIG passes.
 
-For normal transaction inputs, if the creator of the current transaction can successfully create a ScriptSig signature that uses the right public key for the ScriptPubKey of the transaction output they are attempting to spend, that transaction input is considered valid. 
+For normal transaction inputs, if the creator of the current transaction can
+successfully create a ScriptSig signature that uses the right public key for the
+ScriptPubKey of the transaction output they are attempting to spend, that
+transaction input is considered valid.
 
 == Parameters ==
 
-In addition to the stack parameters and the script code itself, in order to operate correctly OP_CHECKSIG needs to know the current transaction and the index of current transaction input.
+In addition to the stack parameters and the script code itself, in order to
+operate correctly OP_CHECKSIG needs to know the current transaction and the
+index of current transaction input.
 
-== How it works ==
-Firstly always this (the default) procedure is applied:
-[[File:Bitcoin_OpCheckSig_InDetail.png|thumb|right|Signature verification process of the default procedure]]
+== How it works == Firstly always this (the default) procedure is applied:
+[[File:Bitcoin_OpCheckSig_InDetail.png|thumb|right|Signature verification
+process of the default procedure]]
+
 # the public key and the signature are popped from the stack, in that order. Signature format is [<DER signature> <1 byte hash-type>]. Hashtype value is last byte of the sig.
+
 # A new subScript is created from the scriptCode (the scriptCode is the actually executed script - either the scriptPubKey for non-segwit, non-P2SH scripts, or the redeemscript in non-segwit P2SH scripts). The script from the immediately after the most recently parsed OP_CODESEPARATOR to the end of the script is the subScript. If there is no OP_CODESEPARATOR the entire script becomes the subScript
+
 # Any occurrences of sig are deleted from subScript, if present (it is ''not standard'' to have a signature in an input script of a transaction)
+
 # Any remaining OP_CODESEPARATORS are removed from subScript
+
 # The hashtype is removed from the last byte of the sig and stored
+
 # A copy is made of the current transaction (hereby referred to txCopy)
+
 # The scripts for all transaction inputs in txCopy are set to empty scripts (exactly 1 byte 0x00)
+
 # The script for the current transaction input in txCopy is set to subScript (lead in by its length as a var-integer encoded!)
 
-Now depending on the hashtype various things can happen to txCopy, these will be discussed individually.
+Now depending on the hashtype various things can happen to txCopy, these will be
+discussed individually.
 
-'''Hashtype Values (from script.h):'''
-{|class="wikitable"
-! Name !! Value
-|-
-| SIGHASH_ALL || 0x00000001
-|-
-| SIGHASH_NONE || 0x00000002
-|-
-| SIGHASH_SINGLE || 0x00000003
-|-
-| SIGHASH_ANYONECANPAY || 0x00000080
-|}
+'''Hashtype Values (from script.h):''' {|class="wikitable" ! Name !! Value |- |
+SIGHASH_ALL || 0x00000001 |- | SIGHASH_NONE || 0x00000002 |- | SIGHASH_SINGLE ||
+0x00000003 |- | SIGHASH_ANYONECANPAY || 0x00000080 |}
 
 <ol>
 <li> If (hashtype&31) = SIGHASH_NONE then apply the SIGHASH_NONE-procedure
@@ -52,51 +68,69 @@ Hence, hashtype SIGHASH_ANYONECANPAY may be applied also after any other hashtyp
 
 === Hashtype SIGHASH_ALL (default) ===
 
-No special further handling occurs in the default case.  Think of this as "sign '''all''' of the outputs." Which is already done by the default procedure.
+No special further handling occurs in the default case. Think of this as "sign
+'''all''' of the outputs." Which is already done by the default procedure.
 
 === Procedure for Hashtype SIGHASH_NONE ===
 
 # The output of txCopy is set to a vector of zero size.
+
 # All other inputs aside from the current input in txCopy have their nSequence index set to zero
 
-Think of this as "sign '''none''' of the outputs-- I don't care where the bitcoins go."
+Think of this as "sign '''none''' of the outputs-- I don't care where the
+bitcoins go."
 
 === Procedure for Hashtype SIGHASH_SINGLE ===
 
 # The output of txCopy is resized to the size of the current input index+1.
+
 # All other txCopy outputs aside from the output that is the same as the current input index are set to a blank script and a value of (long) -1.
+
 # All other txCopy inputs aside from the current input are set to have an nSequence index of zero.
 
-Think of this as "sign '''one''' of the outputs-- I don't care where the other outputs go".
+Think of this as "sign '''one''' of the outputs-- I don't care where the other
+outputs go".
 
-Note: The transaction that uses SIGHASH_SINGLE type of signature should not have more inputs than outputs.
-However if it does (because of the pre-existing implementation), it shall not be rejected, but instead for every "illegal" input (meaning: an input that has an index bigger than the maximum output index) the node should still verify it, though assuming the hash of 0000000000000000000000000000000000000000000000000000000000000001 [https://bitcointalk.org/index.php?topic=260595.0]
+Note: The transaction that uses SIGHASH_SINGLE type of signature should not have
+more inputs than outputs. However if it does (because of the pre-existing
+implementation), it shall not be rejected, but instead for every "illegal" input
+(meaning: an input that has an index bigger than the maximum output index) the
+node should still verify it, though assuming the hash of
+0000000000000000000000000000000000000000000000000000000000000001
+[https://bitcointalk.org/index.php?topic=260595.0]
 
 === Procedure for Hashtype SIGHASH_ANYONECANPAY ===
 
 # The txCopy input vector is resized to a length of one.
+
 # The current transaction input (with scriptPubKey modified to subScript) is set as the first and only member of this vector.
 
-Think of this as "Let other people add inputs to this transaction, I don't care where the rest of the bitcoins come from."
+Think of this as "Let other people add inputs to this transaction, I don't care
+where the rest of the bitcoins come from."
 
 ===Final signature check===
 
-An array of bytes is constructed from the serialized txCopy appended by four bytes for the hash type. This array is sha256 hashed twice, then the public key is used to check the supplied signature against the hash.
-The secp256k1 elliptic curve is used for the verification with the given public key.
+An array of bytes is constructed from the serialized txCopy appended by four
+bytes for the hash type. This array is sha256 hashed twice, then the public key
+is used to check the supplied signature against the hash. The secp256k1 elliptic
+curve is used for the verification with the given public key.
 
 == Return values ==
 
 OP_CHECKSIG will push true to the stack if the check passed, false otherwise.
-OP_CHECKSIG_VERIFY leaves nothing on the stack but will cause the script eval to fail immediately if the check does not pass.
+OP_CHECKSIG_VERIFY leaves nothing on the stack but will cause the script eval to
+fail immediately if the check does not pass.
 
 == Code samples and raw dumps ==
 
-Taking the first transaction in Bitcoin which is in block number 170, we would get after serialising the transaction but before we hash+sign (or verify) it:
+Taking the first transaction in Bitcoin which is in block number 170, we would
+get after serialising the transaction but before we hash+sign (or verify) it:
 
-* http://blockexplorer.com/block/00000000d1145790a8694403d4063f323d499e655c83426834d4ce2f8dd4a2ee
-* http://blockexplorer.com/tx/f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16
+- http://blockexplorer.com/block/00000000d1145790a8694403d4063f323d499e655c83426834d4ce2f8dd4a2ee
+- http://blockexplorer.com/tx/f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16
 
-See also [https://gitorious.org/libbitcoin/libbitcoin libbitcoin] for code samples.
+See also [https://gitorious.org/libbitcoin/libbitcoin libbitcoin] for code
+samples.
 
 <pre>
 01 00 00 00              version
@@ -104,8 +138,8 @@ See also [https://gitorious.org/libbitcoin/libbitcoin libbitcoin] for code sampl
 
 input 0:
 c9 97 a5 e5 6e 10 41 02  input transaction hash (from block 9)
-fa 20 9c 6a 85 2d d9 06 
-60 a2 0b 2d 9c 35 24 23 
+fa 20 9c 6a 85 2d d9 06
+60 a2 0b 2d 9c 35 24 23
 ed ce 25 85 7f cd 37 04
 00 00 00 00              input index (index of txout in block 9 that's being spent)
 
@@ -129,15 +163,15 @@ output 0:
 43                       size of script (var_uint)
 script for output 0:
 41                       push 65 bytes to stack
-04 ae 1a 62 fe 09 c5 f5 
-1b 13 90 5f 07 f0 6b 99 
-a2 f7 15 9b 22 25 f3 74 
-cd 37 8d 71 30 2f a2 84 
-14 e7 aa b3 73 97 f5 54 
-a7 df 5f 14 2c 21 c1 b7 
-30 3b 8a 06 26 f1 ba de 
-d5 c7 2a 70 4f 7e 6c d8 
-4c 
+04 ae 1a 62 fe 09 c5 f5
+1b 13 90 5f 07 f0 6b 99
+a2 f7 15 9b 22 25 f3 74
+cd 37 8d 71 30 2f a2 84
+14 e7 aa b3 73 97 f5 54
+a7 df 5f 14 2c 21 c1 b7
+30 3b 8a 06 26 f1 ba de
+d5 c7 2a 70 4f 7e 6c d8
+4c
 ac                       OP_CHECKSIG
 
 output 1:
@@ -145,37 +179,41 @@ output 1:
 43                       size of script (var_uint)
 script for output 1:
 41                       push 65 bytes to stack
-04 11 db 93 e1 dc db 8a  
-01 6b 49 84 0f 8c 53 bc 
-1e b6 8a 38 2e 97 b1 48 
+04 11 db 93 e1 dc db 8a
+01 6b 49 84 0f 8c 53 bc
+1e b6 8a 38 2e 97 b1 48
 2e ca d7 b1 48 a6 90 9a
-5c b2 e0 ea dd fb 84 cc 
-f9 74 44 64 f8 2e 16 0b 
-fa 9b 8b 64 f9 d4 c0 3f 
-99 9b 86 43 f6 56 b4 12 
-a3                       
+5c b2 e0 ea dd fb 84 cc
+f9 74 44 64 f8 2e 16 0b
+fa 9b 8b 64 f9 d4 c0 3f
+99 9b 86 43 f6 56 b4 12
+a3
 ac                       OP_CHECKSIG
 
 00 00 00 00              locktime
 01 00 00 00              hash_code_type (added on)
 
 result =
-01 00 00 00 01 c9 97 a5 e5 6e 10 41 02 fa 20 9c 6a 85 2d d9 06 60 a2 0b 2d 9c 35 
-24 23 ed ce 25 85 7f cd 37 04 00 00 00 00 43 41 04 11 db 93 e1 dc db 8a 01 6b 49 
-84 0f 8c 53 bc 1e b6 8a 38 2e 97 b1 48 2e ca d7 b1 48 a6 90 9a 5c b2 e0 ea dd fb 
-84 cc f9 74 44 64 f8 2e 16 0b fa 9b 8b 64 f9 d4 c0 3f 99 9b 86 43 f6 56 b4 12 a3 
-ac ff ff ff ff 02 00 ca 9a 3b 00 00 00 00 43 41 04 ae 1a 62 fe 09 c5 f5 1b 13 90 
-5f 07 f0 6b 99 a2 f7 15 9b 22 25 f3 74 cd 37 8d 71 30 2f a2 84 14 e7 aa b3 73 97 
-f5 54 a7 df 5f 14 2c 21 c1 b7 30 3b 8a 06 26 f1 ba de d5 c7 2a 70 4f 7e 6c d8 4c 
-ac 00 28 6b ee 00 00 00 00 43 41 04 11 db 93 e1 dc db 8a 01 6b 49 84 0f 8c 53 bc 
-1e b6 8a 38 2e 97 b1 48 2e ca d7 b1 48 a6 90 9a 5c b2 e0 ea dd fb 84 cc f9 74 44 
-64 f8 2e 16 0b fa 9b 8b 64 f9 d4 c0 3f 99 9b 86 43 f6 56 b4 12 a3 ac 00 00 00 00 
-01 00 00 00 
+01 00 00 00 01 c9 97 a5 e5 6e 10 41 02 fa 20 9c 6a 85 2d d9 06 60 a2 0b 2d 9c 35
+24 23 ed ce 25 85 7f cd 37 04 00 00 00 00 43 41 04 11 db 93 e1 dc db 8a 01 6b 49
+84 0f 8c 53 bc 1e b6 8a 38 2e 97 b1 48 2e ca d7 b1 48 a6 90 9a 5c b2 e0 ea dd fb
+84 cc f9 74 44 64 f8 2e 16 0b fa 9b 8b 64 f9 d4 c0 3f 99 9b 86 43 f6 56 b4 12 a3
+ac ff ff ff ff 02 00 ca 9a 3b 00 00 00 00 43 41 04 ae 1a 62 fe 09 c5 f5 1b 13 90
+5f 07 f0 6b 99 a2 f7 15 9b 22 25 f3 74 cd 37 8d 71 30 2f a2 84 14 e7 aa b3 73 97
+f5 54 a7 df 5f 14 2c 21 c1 b7 30 3b 8a 06 26 f1 ba de d5 c7 2a 70 4f 7e 6c d8 4c
+ac 00 28 6b ee 00 00 00 00 43 41 04 11 db 93 e1 dc db 8a 01 6b 49 84 0f 8c 53 bc
+1e b6 8a 38 2e 97 b1 48 2e ca d7 b1 48 a6 90 9a 5c b2 e0 ea dd fb 84 cc f9 74 44
+64 f8 2e 16 0b fa 9b 8b 64 f9 d4 c0 3f 99 9b 86 43 f6 56 b4 12 a3 ac 00 00 00 00
+01 00 00 00
 </pre>
 
-To understand where that raw dump has come from, it may be useful to examine tests/ec-key.cpp in [https://gitorious.org/libbitcoin/libbitcoin libbitcoin],
+To understand where that raw dump has come from, it may be useful to examine
+tests/ec-key.cpp in [https://gitorious.org/libbitcoin/libbitcoin libbitcoin],
 
-[https://gitorious.org/libbitcoin/libbitcoin libbitcoin] has a unit test under tests/ec-key.cpp (make ec-key && ./bin/tests/ec-key). There is also a working OP_CHECKSIG implementation in src/script.cpp under script::op_checksig(). See also the unit test: tests/script-test.cpp
+[https://gitorious.org/libbitcoin/libbitcoin libbitcoin] has a unit test under
+tests/ec-key.cpp (make ec-key && ./bin/tests/ec-key). There is also a working
+OP_CHECKSIG implementation in src/script.cpp under script::op_checksig(). See
+also the unit test: tests/script-test.cpp
 
 <source lang="cpp">
 #include <iostream>
@@ -195,19 +233,13 @@ using libbitcoin::data_chunk;
 using libbitcoin::log_info;
 using libbitcoin::log_fatal;
 
-int main()
-{
-    serializer ss;
-    // blk number 170, tx 1, input 0
-    // version = 1
-    ss.write_4_bytes(1);
-    // 1 inputs
-    ss.write_var_uint(1);
+int main() { serializer ss; // blk number 170, tx 1, input 0 // version = 1
+ss.write_4_bytes(1); // 1 inputs ss.write_var_uint(1);
 
     // input 0
     // prevout hash
     ss.write_hash(hash_digest{0x04, 0x37, 0xcd, 0x7f, 0x85, 0x25, 0xce, 0xed, 0x23, 0x24, 0x35, 0x9c, 0x2d, 0x0b, 0xa2, 0x60, 0x06, 0xd9, 0x2d, 0x85, 0x6a, 0x9c, 0x20, 0xfa, 0x02, 0x41, 0x10, 0x6e, 0xe5, 0xa5, 0x97, 0xc9});
-    // prevout index 
+    // prevout index
     ss.write_4_bytes(0);
 
     // input script after running OP_CHECKSIG for this tx is a single
@@ -293,16 +325,14 @@ int main()
 
     log_info() << "checksig returns: " << (key.verify(tx_hash, signature) ? "true" : "false");
     return 0;
+
 }
 
 </source>
 
-==References==
-<references/>
+==References== <references/>
 
-[[Category:Technical]]
-[[Category:Developer]]
-{{DISPLAYTITLE:OP_CHECKSIG}}
+[[Category:Technical]] [[Category:Developer]] {{DISPLAYTITLE:OP_CHECKSIG}}
 
-Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
-This page content is translated by Bitcoin wiki. original right is reserved by them.
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020 This page content is translated by
+Bitcoin wiki. original right is reserved by them.

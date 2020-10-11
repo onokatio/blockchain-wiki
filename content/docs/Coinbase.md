@@ -6,10 +6,14 @@ draft: true
 
 :''For the business, see [[Coinbase (business)]].''
 
-The '''coinbase''' is the content of the 'input' of a generation [[transaction]]. While regular transactions use the 'inputs' section to refer to their parent transaction outputs, a generation transaction has no parent, and creates new coins from nothing. 
+The '''coinbase''' is the content of the 'input' of a generation
+[[transaction]]. While regular transactions use the 'inputs' section to refer to
+their parent transaction outputs, a generation transaction has no parent, and
+creates new coins from nothing.
 
-The coinbase can contain any arbitrary data. The [[genesis block]] famously contains the dated title of a newspaper article in The Times:
- The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
+The coinbase can contain any arbitrary data. The [[genesis block]] famously
+contains the dated title of a newspaper article in The Times: The Times
+03/Jan/2009 Chancellor on brink of second bailout for banks
 
-Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
-This page content is translated by Bitcoin wiki. original right is reserved by them.
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020 This page content is translated by
+Bitcoin wiki. original right is reserved by them.
