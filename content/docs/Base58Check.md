@@ -15,7 +15,7 @@ binary-to-text encoding] known as '''Base58Check''' is used for encoding
 More generically, Base58Check encoding is used for encoding byte arrays in
 Bitcoin into human-typable strings.
 
-## Background
+## 背景
 
 The original Bitcoin client source code explains the reasoning behind base58
 encoding:
@@ -27,7 +27,7 @@ characters is not as easily accepted as an account number. // - E-mail usually
 won't line-break if there's no punctuation to break at. // - Doubleclicking
 selects the whole number as one word if it's all alphanumeric.
 
-## Features of Base58Check
+## 機能
 
 Base58Check has the following features:
 
@@ -40,7 +40,7 @@ Base58Check has the following features:
   used to automatically detect and possibly correct typographical errors.
 - An extra step for preservation of leading zeroes in the data.
 
-## Creating a Base58Check string
+## Base58Checkの生成方法
 
 A Base58Check string is created from a version/application byte and payload as
 follows.
@@ -68,7 +68,7 @@ follows.
   [[Technical_background_of_version_1_Bitcoin_addresses#How_to_create_Bitcoin_Address
   | technical background]] of the bitcoin address.
 
-## Encoding a Bitcoin address
+## ビットコインのアドレスのエンコード
 
 Bitcoin addresses are implemented using the Base58Check encoding of the hash of
 either:
@@ -89,7 +89,7 @@ indicate sign - your code must handle these cases properly or else you may
 generate valid-looking addresses which can be sent to, but cannot be spent
 from - which would lead to the permanent loss of coins.)
 
-## Encoding a private key
+## 秘密鍵のエンコード
 
 Base58Check encoding is also used for encoding [[private key|ECDSA private
 keys]] in the [[wallet import format]]. This is formed exactly the same as a
@@ -99,7 +99,7 @@ the payload is 32 bytes instead of 20 (a private key in Bitcoin is a single
 uncompressed public key, such encodings will always yield a 51-character string
 that starts with '5', or more specifically, either '5H', '5J', or '5K'.
 
-## Base58 symbol chart
+## Base58 対応表
 
 The Base58 symbol chart used in Bitcoin is specific to the Bitcoin project and
 is not intended to be the same as any other Base58 implementation used outside
@@ -133,7 +133,7 @@ hash_or_other_data + 4-byte_check_code) is
 
     output_string.reverse();
 
-## Version bytes
+## バージョン情報
 
 Here are some common version bytes:
 
@@ -143,11 +143,11 @@ key (proposed) |- |52 |M or N |Namecoin pubkey hash |- |128 |5 |Private key |-
 |111 |m or n |Bitcoin testnet pubkey hash |- |196 |2 |Bitcoin testnet script
 hash |} [[List of address prefixes]] is a more complete list.
 
-## See Also
+## 関連項目
 
 - [http://lenschulwitz.com/base58 Online Base58 Decoder, Encoder, and Validator]
 
-## Source code
+## ソースコード
 
 - [https://github.com/bitcoin/bitcoin/blob/master/src/base58.cpp "Satoshi" C++
   codebase (decode and encode, no external libraries needed)]
