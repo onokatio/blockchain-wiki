@@ -1,6 +1,7 @@
 baseURL = 'https://blockchain-wiki.katio.net/'
 title = 'Blockchain Wiki'
 theme = 'book'
+languageCode = "ja"
 
 # Book configuration
 disablePathToLower = true
