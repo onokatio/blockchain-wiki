@@ -153,3 +153,6 @@ The alert key was scheduled to be released to the public in May 2017, but this w
 https://bitcoin.org/en/alerts
 
 {{Bitcoin Core documentation}}
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

@@ -97,3 +97,6 @@ If ninety minutes has passed since a peer node has communicated any messages, th
 [[Category:Technical]]
 
 [[pl:Sieć]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

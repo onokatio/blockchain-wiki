@@ -102,3 +102,6 @@ There are a few proposals for optimizing Bitcoin's scalability. Some of these re
 
 [[Category:Technical]]
 [[Category:Scalability]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

@@ -367,3 +367,6 @@ The existing p2pool has issues with dust. As more miners join the pool each indi
 {{Pools}}
 [[Category:Technical]]
 [[Category:Mining]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

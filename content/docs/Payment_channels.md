@@ -101,3 +101,6 @@ A technique that can allow payments to be securely routed across multiple paymen
 </references>
 
 [[Category:Technical]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

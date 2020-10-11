@@ -180,3 +180,6 @@ To add a node in this list, you just need the ip/hostname and your name, the oth
 * [https://blockchain.info/connected-nodes Recently connected nodes at blockchain.info]
 
 {{Bitcoin Core documentation}}
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

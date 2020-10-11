@@ -10,3 +10,6 @@ The '''coinbase''' is the content of the 'input' of a generation [[transaction]]
 
 The coinbase can contain any arbitrary data. The [[genesis block]] famously contains the dated title of a newspaper article in The Times:
  The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

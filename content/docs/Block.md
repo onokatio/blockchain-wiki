@@ -56,3 +56,6 @@ There is more technical detail on the [[block hashing algorithm]] page.
 
 [[fr:Blocs]][[pl:Bloki]][[zh-cn:Block]]
 [[de:Block]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

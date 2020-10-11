@@ -14,3 +14,6 @@ Also see http://en.wikipedia.org/wiki/Cryptographic_hash
 [[Category:Vocabulary]]
 
 [[de:Hash]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

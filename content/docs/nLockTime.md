@@ -25,3 +25,6 @@ For transaction relay, nLockTime must be <= the current block's height (block-ba
 
 [[Category:Technical]]
 {{lowercase}}
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

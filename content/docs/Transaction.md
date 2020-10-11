@@ -255,3 +255,6 @@ The output sets the conditions to release this bitcoin amount later. The sum of 
 [[de:Transaktion]]
 [[es:Transacción]]
 [[pl:Transakcje]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

@@ -106,3 +106,6 @@ Bitcoin transactions do not have any kind of origin-, source- or "from" address.
 
 [[es:Dirección]]
 [[de:Adresse]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

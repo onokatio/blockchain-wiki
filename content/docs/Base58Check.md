@@ -269,3 +269,6 @@ Here are some common version bytes:
 [[Category:Technical]]
 
 [[es:Codificación Base58Check]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

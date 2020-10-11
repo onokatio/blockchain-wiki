@@ -72,3 +72,6 @@ If the communication protocol between client and service is designed correctly f
 [[Category:Technical]]
 [[Category:Scalability]]
 [[Category:Privacy]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

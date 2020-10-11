@@ -94,3 +94,6 @@ Broken down it looks like this:
 __NOTOC__
 
 [[Category:Technical]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

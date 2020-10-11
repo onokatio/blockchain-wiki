@@ -85,3 +85,6 @@ If you have a raw transaction and want to make sure all of its signatures are co
 
 [[Category:Technical]]
 [[Category:Developer]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

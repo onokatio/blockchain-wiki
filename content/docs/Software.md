@@ -285,3 +285,6 @@ Main page: [[Poolservers]]
 * [https://www.PikaPay.com PikaPay] ([[PikaPay|info]]) The PikaPay service will be retiring as of March 1st, 2015
 
 [[Category:Software|*]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

@@ -51,3 +51,6 @@ Blockchain is touted as a magical fairy dust solution that you can sprinkle over
 * [http://www.blockr.io Blockr.io] - Web based blockchain explorer
 * [https://bchain.info bchain.info] - Block Explorer for Bitcoin
 [[ru:цепочка блоков]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

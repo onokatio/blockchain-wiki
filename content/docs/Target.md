@@ -42,3 +42,6 @@ See also [[Difficulty]]
 
 [[Category:Technical]]
 [[Category:Vocabulary]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

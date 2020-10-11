@@ -43,3 +43,6 @@ Finally the order ''n'' of ''G'' and the cofactor are:
 [[es:Secp256k1]]
 
 [[Category:Technical]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

@@ -291,3 +291,6 @@ Using some of the techniques from example 6 and some very advanced scripting, it
 * [[Fidelity bonds]]
 
 [[Category:Technical]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.
