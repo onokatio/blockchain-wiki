@@ -71,3 +71,6 @@ In the same way as with an Internet browser, the user needs to enter a request t
 
 ==References==
 	<references />
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

@@ -50,3 +50,6 @@ An EMP strike could also destroy private keys. You should have backups of your p
 The Bitcoin block chain is so widely distributed that someone will undoubtedly have a safe copy of it somewhere.
 
 [[Category:Technical]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

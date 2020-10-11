@@ -40,3 +40,6 @@ As described in [[BIP 0001]] the workflow of a BIP is as follows:
 [[Category:BIP| ]]
 
 [[es:Propuestas de mejora de Bitcoin]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

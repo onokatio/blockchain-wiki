@@ -53,3 +53,6 @@ In Bitcoin the hash value is also used as a reference to the block itself, so so
 ==References==
 [[Distribution of nonces and hashes]]
 <references/>
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

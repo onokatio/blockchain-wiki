@@ -17,3 +17,6 @@ The ''UTXO set'' is the collection of all addresses with unspent outputs.
 {{stub}}
 
 [[Category:Technical]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

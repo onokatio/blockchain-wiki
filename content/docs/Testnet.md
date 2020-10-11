@@ -72,3 +72,6 @@ Offline (2016-08-07):
 [[Category:Developer]]
 
 {{Bitcoin Core documentation}}
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

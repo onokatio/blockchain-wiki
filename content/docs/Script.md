@@ -1017,3 +1017,6 @@ In February 2017 the SHA1 bounty worth 2.48 bitcoins was claimed.
 [[Category:Vocabulary]]
 
 {{Bitcoin Core documentation}}
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

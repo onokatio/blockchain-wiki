@@ -28,3 +28,6 @@ The purpose of this trick is to allow people to safely experiment with different
 [[Category:Technical]]
 [[Category:Scalability]]
 [[Category:Privacy]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

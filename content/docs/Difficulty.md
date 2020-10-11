@@ -172,3 +172,6 @@ and find that it takes just under 24 hours on average.
 [[Category:Vocabulary]]
 
 [[pl:Trudność]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

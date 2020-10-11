@@ -81,3 +81,6 @@ The list below should be in alphabetical order. Any commonly-used synonyms or an
 [[Category:Technical]]
 [[Category:Scalability]]
 [[Category:Privacy]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

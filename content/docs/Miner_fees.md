@@ -242,3 +242,6 @@ A transaction was safe to send without fees if these conditions were met:
 [[de:Transaktionsgebühren]]
 
 {{Bitcoin Core documentation}}
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

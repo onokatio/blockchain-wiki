@@ -536,3 +536,6 @@ Make a backup of that entire folder, then delete everything EXCEPT <code>[[Walle
 [[Category:License/MIT-X11]]
 [[Category:Open Source]]
 {{lowercase}}
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

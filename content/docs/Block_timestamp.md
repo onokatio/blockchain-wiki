@@ -17,3 +17,6 @@ Bitcoin uses an unsigned integer for the timestamp, so the [[:Wikipedia:Year_203
 See also [[epoch]], [[genesis block]].
 
 [[Category:Technical]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

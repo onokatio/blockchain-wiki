@@ -303,3 +303,6 @@ int main()
 [[Category:Technical]]
 [[Category:Developer]]
 {{DISPLAYTITLE:OP_CHECKSIG}}
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.

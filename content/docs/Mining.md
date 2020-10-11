@@ -89,3 +89,6 @@ A lot of [[altcoin]]s are using staking. Staking is often marketed as a much mor
 * [http://bitcoindaily.org/bitcoin-guides/what-is-bitcoin-mining/ Bitcoin Mining Explained]
 [[ru:Mining]]
 [[Category:Mining]][[Category:Vocabulary]]
+
+Ⓒ Bitcoin Wiki https://en.bitcoin.it/ 2020
+This page content is translated by Bitcoin wiki. original right is reserved by them.
